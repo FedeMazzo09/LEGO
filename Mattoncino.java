@@ -1,4 +1,5 @@
 public class Mattoncino {
+    private static int counter = 0;
     private int codice;
     private int red;
     private int green;
@@ -7,10 +8,9 @@ public class Mattoncino {
     private int larghezza;
     private int lunghezza;
     private int altezza;
-    private Mattoncino[] mattonciniAll;
 
-    public void Mattoncino(int codice, int red, int green, int blue, int peso, int larghezza, int lunghezza, int altezza) {
-        this.codice = codice;
+    public Mattoncino(int red, int green, int blue, int peso, int larghezza, int lunghezza, int altezza) {
+        this.codice = counter++;
         this.red = red;
         this.green = green;
         this.blue = blue;
@@ -52,10 +52,33 @@ public class Mattoncino {
         return altezza;
     }
 
-    /* public void  salvaMattoncini (){
-        mattonciniAll = new Mattoncino[10];
-        for (int i=0; i< mattonciniAll.length; i++){
-            if (mattonciniAll[i].getLarghezza()=)
+    public boolean equals(Mattoncino other) {
+        if (this.red != other.red) {
+            return false;
         }
-    }*/
+        if (this.green != other.green) {
+            return false;
+        }
+        if (this.blue != other.blue) {
+            return false;
+        }
+        if (this.peso != other.peso) {
+            return false;
+        }
+        if (this.larghezza != other.larghezza) {
+            return false;
+        }
+        if (this.lunghezza != other.lunghezza) {
+            return false;
+        }
+        if (this.altezza != other.altezza) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public String toString() {
+        return "Mattoncino [codice=" + codice + ", colore=(" + red + "," + green + "," + blue + "), peso=" + peso + "g]";
+    }
 }
