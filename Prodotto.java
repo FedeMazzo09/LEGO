@@ -23,13 +23,6 @@ public class Prodotto {
     public void aggiungiMattoncino(Mattoncino m) {
         if (m == null) return;
 
-        for (int i = 0; i < count; i++) {
-            if (mattoncini[i].equals(m)) {
-                System.out.println("Il mattoncino è già presente");
-                return;
-            }
-        }
-
         if (count < mattoncini.length) {
             mattoncini[count++] = m;
             System.out.println("Il mattoncino è stato aggiunto al prodotto " + nome);

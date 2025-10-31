@@ -21,6 +21,9 @@ public class Test {
         p2.aggiungiMattoncino(m5);
         p2.aggiungiMattoncino(m2);
         p2.aggiungiMattoncino(m4);
+        p2.aggiungiMattoncino(m5);
+        p2.aggiungiMattoncino(m1);
+        p2.aggiungiMattoncino(m2);
         System.out.println();
 
         System.out.println("Le caratteristiche di " + p1.getNome() + " sono: " + p1);
@@ -40,6 +43,6 @@ public class Test {
         System.out.println();
 
         System.out.println("Numero di mattoncini con codice 0 nel prodotto " + p1.getNome() + " sono: " + p1.getNumeroMattonciniCodice(0));
-        System.out.println("Numero di mattoncini con codice 0 nel prodotto " + p2.getNome() + " sono: " + p2.getNumeroMattonciniCodice(0));
+        System.out.println("Numero di mattoncini con codice 0 nel prodotto " + p2.getNome() + " sono: " + p2.getNumeroMattonciniCodice(4));
     }
 }
