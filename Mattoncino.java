@@ -52,31 +52,6 @@ public class Mattoncino {
         return altezza;
     }
 
-    public boolean equals(Mattoncino other) {
-        if (this.red != other.red) {
-            return false;
-        }
-        if (this.green != other.green) {
-            return false;
-        }
-        if (this.blue != other.blue) {
-            return false;
-        }
-        if (this.peso != other.peso) {
-            return false;
-        }
-        if (this.larghezza != other.larghezza) {
-            return false;
-        }
-        if (this.lunghezza != other.lunghezza) {
-            return false;
-        }
-        if (this.altezza != other.altezza) {
-            return false;
-        }
-        return true;
-    }
-
     public String toString() {
         return "Mattoncino [codice=" + codice + ", colore=(" + red + "," + green + "," + blue + "), peso=" + peso + "g]";
     }
