@@ -2,28 +2,36 @@ public class Prodotto {
     private static int counter = 0;
     private int codice;
     private String nome;
-    private Mattoncino[] mattonciniProduct;
+    private Mattoncino[] mattoncini;
     private int count;
 
     public Prodotto(String nome) {
         this.codice = counter++;
         this.nome = nome;
-        this.mattonciniProduct = new Mattoncino[100];
+        this.mattoncini = new Mattoncino[100];
         this.count = 0;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getCounter() {
+        return counter;
     }
 
     public void aggiungiMattoncino(Mattoncino m) {
         if (m == null) return;
 
         for (int i = 0; i < count; i++) {
-            if (mattonciniProduct[i].equals(m)) {
+            if (mattoncini[i].equals(m)) {
                 System.out.println("Il mattoncino è già presente");
                 return;
             }
         }
 
-        if (count < mattonciniProduct.length) {
-            mattonciniProduct[count++] = m;
+        if (count < mattoncini.length) {
+            mattoncini[count++] = m;
             System.out.println("Il mattoncino è stato aggiunto al prodotto " + nome);
         } else {
             System.out.println("Limite massimo di mattoncini raggiunto");
@@ -37,15 +45,15 @@ public class Prodotto {
     public int getPesoTotale() {
         int tot = 0;
         for (int i = 0; i < count; i++) {
-            tot = tot + mattonciniProduct[i].getPeso();
+            tot = tot + mattoncini[i].getPeso();
         }
         return tot;
     }
 
     public void stampaMattonciniColore(int r, int g, int b) {
-        System.out.println("Mattoncini del colore (" + r + "," + g + "," + b + "):");
+        System.out.println("Mattoncini del colore (" + r + "," + g + "," + b + ") del prodotto " + nome + " sono:");
         for (int i = 0; i < count; i++) {
-            Mattoncino m = mattonciniProduct[i];
+            Mattoncino m = mattoncini[i];
             if (m.getRed() == r && m.getGreen() == g && m.getBlue() == b) {
                 System.out.println(m);
             }
@@ -55,7 +63,7 @@ public class Prodotto {
     public int getNumeroMattonciniCodice(int codiceMattoncino) {
         int n = 0;
         for (int i = 0; i < count; i++) {
-            if (mattonciniProduct[i].getCodice() == codiceMattoncino) {
+            if (mattoncini[i].getCodice() == codiceMattoncino) {
                 n++;
             }
         }

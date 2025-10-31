@@ -74,7 +74,6 @@ public class Mattoncino {
         if (this.altezza != other.altezza) {
             return false;
         }
-
         return true;
     }
 
